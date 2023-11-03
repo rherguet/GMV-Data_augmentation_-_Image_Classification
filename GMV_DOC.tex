@@ -1,0 +1,116 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% DOCUMENTO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[10pt,a4paper,twoside,openright,titlepage,openbib]{book}
+\author{Regina Hergueta Carreño}
+\title{Google Project Management Professional Certificate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% PAQUETES                              (orden alfabético)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[spanish]{babel}
+\usepackage{footnote} % \footnote{texto}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage[hidelinks,colorlinks=true,linkcolor=blue]{hyperref} % \label para etiquetar y \ref para mostrar, ó \hyperref[etiqueta]{texto}
+\usepackage[utf8]{inputenc}
+\usepackage{makeidx} % Paquete para glosario de términos
+\usepackage{parskip} % Controlar espaciado entre párrafos y eliminar sangría
+\usepackage{titlesec} % Cambiar el formato del título de un capítulo
+
+%\usepackage{indentfirst} % Sangría en la primera línea del primer párrafo después de un título de capítulo o sección
+%\usepackage{marginnote} % \marginnote{texto}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% ESTRUCTURA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setcounter{secnumdepth}{3} % Numeración hasta nivel de subsubsección
+
+%% INTRODUCCIÓN
+\newcommand{\introchapter}[1]{\chapter*{#1}\addcontentsline{toc}{chapter}{#1}}
+\titleformat{\introchapter}[display]
+  {\normalfont\huge\bfseries}{}{}{}
+
+%% CAPÍTULOS
+\titleformat{\chapter}[display]
+  %{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge} % Original default
+  {\normalfont\huge\bfseries}{Curso \thechapter}{20pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{50pt}{40pt} % Ajustar espaciado antes y después del título
+
+%% GLOSARIO
+\makeindex %Creamos un glosario de términos
+
+%% PÁRRAFOS
+%\setlength{\parskip}{12pt} % Ajustar manualmente el espaciado entre párrafos
+%\setlength{\parindent}{0pt} % Elimina la sangría en la primera línea
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% PORTADA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage}
+
+    \frontmatter % Cambia a numeración romana para la parte frontal del libro
+
+    \begin{titlepage}
+    \begin{center}
+    
+    \vspace{4cm}
+    {\Huge \textbf{Google Project Management\\Professional Certificate}}
+    
+    \vspace{1cm}
+    {\LARGE \textbf{Google Career Certificates}}
+    
+    \vspace{1cm}
+    {\Large \textbf{Coursera}}
+
+    \vfill
+    \includegraphics[width=1 \textwidth]{Logo G.png}
+    \vfill
+
+    {\Large Regina Hergueta Carreño}
+    
+    \vspace{0.5cm}
+    {\large \today}
+    
+    \end{center}
+    \end{titlepage}
+
+\end{titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% ÍNDICE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tableofcontents %Creamos un índice
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% CAPÍTULOS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mainmatter%
+
+\input{Intro.tex}
+\input{C1.tex} 
+\input{C2.tex}
+\input{C3.tex}
+\input{C4.tex}
+\input{C5.tex}
+\input{C6.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% GLOSARIO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\printindex %Para incluir términos ej: "Explora\index{exp}"
+
+\end{document}
